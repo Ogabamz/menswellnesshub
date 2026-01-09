@@ -1,0 +1,858 @@
+/* ===========================
+   CSS Reset & Base Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette - Light Mode with High Contrast */
+    --primary-bg: hsl(0, 0%, 98%);
+    --secondary-bg: hsl(0, 0%, 95%);
+    --accent-bg: hsl(210, 20%, 92%);
+
+    /* Text Colors - High Contrast for Readability */
+    --text-primary: hsl(0, 0%, 10%);
+    --text-secondary: hsl(0, 0%, 25%);
+    --text-muted: hsl(0, 0%, 40%);
+
+    /* Accent Colors - Professional and Masculine */
+    --accent-primary: hsl(210, 50%, 35%);
+    --accent-primary-dark: hsl(210, 50%, 25%);
+    --accent-secondary: hsl(25, 60%, 45%);
+    --accent-gold: hsl(43, 70%, 50%);
+
+    /* Border Colors */
+    --border-light: hsl(0, 0%, 85%);
+    --border-medium: hsl(0, 0%, 70%);
+    --border-dark: hsl(0, 0%, 50%);
+
+    /* Typography - Optimized for 40+ Readability */
+    --font-display: 'Merriweather', Georgia, serif;
+    --font-body: 'Open Sans', Arial, sans-serif;
+
+    /* Font Sizes - Larger for Better Readability */
+    --font-size-base: 18px;
+    --font-size-large: 20px;
+    --font-size-small: 16px;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+
+    /* Border Radius - Subtle */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Shadows - Subtle for Depth */
+    --shadow-sm: 0 1px 3px hsla(0, 0%, 0%, 0.12);
+    --shadow-md: 0 2px 8px hsla(0, 0%, 0%, 0.15);
+    --shadow-lg: 0 4px 16px hsla(0, 0%, 0%, 0.18);
+
+    /* Transitions - Smooth but Not Distracting */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================
+   Typography
+   =========================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.emphasis {
+    color: var(--accent-primary);
+    font-weight: 700;
+    font-size: 1.15em;
+}
+
+/* ===========================
+   Layout Utilities
+   =========================== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--accent-primary);
+    font-weight: 900;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, hsl(210, 30%, 95%) 0%, hsl(210, 25%, 90%) 100%);
+    border-bottom: 3px solid var(--accent-primary);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    padding: var(--spacing-lg) 0;
+}
+
+.hero-title {
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-primary);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* ===========================
+   Buttons - Large and Clear
+   =========================== */
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+    text-align: center;
+    min-width: 200px;
+}
+
+.primary-cta {
+    background: var(--accent-primary);
+    color: white;
+    border: 3px solid var(--accent-primary);
+}
+
+.primary-cta:hover {
+    background: var(--accent-primary-dark);
+    border-color: var(--accent-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.primary-cta:active {
+    transform: translateY(0);
+}
+
+.large-cta {
+    padding: 1.5rem 3rem;
+    font-size: 1.3rem;
+}
+
+/* ===========================
+   For You Section
+   =========================== */
+.for-you-section {
+    background: var(--primary-bg);
+}
+
+.qualities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.quality-card {
+    background: white;
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.quality-card h3 {
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.statement-box {
+    background: white;
+    border: 3px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+.statement-box p {
+    font-size: var(--font-size-large);
+}
+
+/* ===========================
+   Symptoms Section
+   =========================== */
+.symptoms-section {
+    background: var(--secondary-bg);
+}
+
+.symptoms-list {
+    display: grid;
+    gap: var(--spacing-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.symptom-item {
+    background: white;
+    border: 2px solid var(--border-light);
+    border-left: 5px solid var(--accent-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.symptom-item h3 {
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.4rem;
+}
+
+.symptom-item p {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+/* ===========================
+   Reframe Section
+   =========================== */
+.reframe-section {
+    background: var(--primary-bg);
+}
+
+.reframe-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.thought-bubbles {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.thought-bubble {
+    background: hsl(0, 0%, 92%);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.thought-bubble p {
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
+.truth-box {
+    background: hsl(210, 30%, 95%);
+    border: 3px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+}
+
+.truth-statement {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.failure-reasons {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+}
+
+.failure-reasons li {
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+.failure-reasons li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--accent-secondary);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.validation {
+    font-weight: 700;
+    color: var(--text-primary);
+    border-top: 2px solid var(--border-medium);
+    padding-top: var(--spacing-md);
+    font-size: var(--font-size-large);
+}
+
+/* ===========================
+   Desires Section
+   =========================== */
+.desires-section {
+    background: var(--secondary-bg);
+}
+
+.desires-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.desire-card {
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.desire-image-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, hsl(210, 20%, 85%) 0%, hsl(210, 20%, 90%) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.placeholder-text {
+    font-weight: 700;
+    color: var(--accent-primary);
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-large);
+}
+
+.desire-card p {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+/* ===========================
+   Product Intro Section
+   =========================== */
+.product-intro-section {
+    background: var(--primary-bg);
+    border-top: 3px solid var(--accent-primary);
+    border-bottom: 3px solid var(--accent-primary);
+}
+
+.product-intro-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-name {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 900;
+}
+
+.product-hero-image-placeholder {
+    height: 400px;
+    background: linear-gradient(135deg, hsl(210, 20%, 90%) 0%, hsl(210, 20%, 95%) 100%);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+    border: 3px solid var(--accent-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-tagline {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+}
+
+.product-features {
+    display: grid;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-item {
+    padding: var(--spacing-sm);
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-sm);
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+}
+
+.privacy-statement {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-top: var(--spacing-md);
+}
+
+/* ===========================
+   What's Included Section
+   =========================== */
+.whats-included-section {
+    background: var(--secondary-bg);
+}
+
+.included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.included-card {
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.included-image-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, hsl(210, 20%, 85%) 0%, hsl(210, 20%, 90%) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.included-card h3 {
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-xs);
+    color: var(--accent-primary);
+    font-size: 1.3rem;
+}
+
+.included-card p {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+/* ===========================
+   Who Section
+   =========================== */
+.who-section {
+    background: var(--primary-bg);
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.who-card {
+    background: white;
+    border: 3px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.for-card {
+    border-color: var(--accent-primary);
+}
+
+.not-for-card {
+    border-color: var(--accent-secondary);
+}
+
+.who-card h3 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.for-card h3 {
+    color: var(--accent-primary);
+}
+
+.not-for-card h3 {
+    color: var(--accent-secondary);
+}
+
+.who-card ul {
+    list-style: none;
+}
+
+.who-card li {
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+.for-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.not-for-card li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--accent-secondary);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ===========================
+   Price Section
+   =========================== */
+.price-section {
+    background: var(--secondary-bg);
+}
+
+.price-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.price-box {
+    background: white;
+    border: 4px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.price-label {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.price-amount {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: var(--accent-primary);
+    font-family: var(--font-display);
+    margin-bottom: var(--spacing-sm);
+}
+
+.price-note {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.value-proposition {
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+}
+
+.value-proposition p {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ===========================
+   How It Works Section
+   =========================== */
+.how-it-works-section {
+    background: var(--primary-bg);
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 auto var(--spacing-md);
+    font-family: var(--font-display);
+}
+
+.step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent-primary);
+}
+
+.step-card p {
+    font-size: var(--font-size-base);
+}
+
+.process-note {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-large);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* ===========================
+   Compliance Section
+   =========================== */
+.compliance-section {
+    background: var(--secondary-bg);
+}
+
+.compliance-box {
+    background: white;
+    border: 3px solid var(--accent-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+.compliance-list {
+    list-style: none;
+}
+
+.compliance-list li {
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+.compliance-list li::before {
+    content: '⚠';
+    position: absolute;
+    left: 0;
+    color: var(--accent-secondary);
+    font-size: 1.3rem;
+}
+
+/* ===========================
+   Final CTA Section
+   =========================== */
+.final-cta-section {
+    background: var(--primary-bg);
+    border-top: 3px solid var(--accent-primary);
+}
+
+.final-cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.final-cta-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-md);
+}
+
+.final-cta-content p {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.final-cta-content .cta-button {
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.guarantee-text {
+    font-size: var(--font-size-base);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.footer {
+    background: hsl(210, 20%, 90%);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    border-top: 2px solid var(--border-medium);
+}
+
+.footer p {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-muted);
+    font-size: var(--font-size-small);
+}
+
+.footer-disclaimer {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .qualities-grid,
+    .desires-grid,
+    .included-grid,
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .who-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+
+    .hero,
+    .cta-button {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
