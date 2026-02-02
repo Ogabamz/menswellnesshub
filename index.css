@@ -587,8 +587,12 @@ footer {
         font-size: 15px;
     }
 
+    header {
+        padding: var(--space-sm) 0;
+    }
+
     .hero {
-        padding: 8rem 0 4rem;
+        padding: 12rem 0 4rem;
         text-align: center;
     }
 
